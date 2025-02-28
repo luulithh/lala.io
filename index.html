@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sbewo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+        .welcome-message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать в Sbewo!</h1>
+    <p id="welcome-message" class="welcome-message">Загрузка...</p>
+
+    <script>
+        // Получаем параметры из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('user');  // Извлекаем параметр 'user'
+
+        // Если имя пользователя передано, отображаем его
+        if (userName) {
+            document.getElementById('welcome-message').textContent = `Добро пожаловать, ${userName}!`;
+        } else {
+            document.getElementById('welcome-message').textContent = 'Добро пожаловать!';
+        }
+    </script>
+</body>
+</html>
